@@ -11,6 +11,7 @@ const NAV_BAR_ICON_WIDTH = 23;
 const NAV_BAR_ICON_HEIGHT = 23;
 
 export const NAV_BAR_SELECTION_COLOR = '#E2EAF8';
+export const NAV_BAR_BORDER_COLOR = '#7cc6fe';
 
 export const iconsConfig: Record<Screens, () => ReactNode> = {
   [Screens.PlainJS]: () => (

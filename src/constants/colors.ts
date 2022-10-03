@@ -7,5 +7,5 @@ export const COLORS = [
   '#00F800',
 ];
 
-export const NAV_BAR_SELECTION_COLOR = '#E2EAF8';
-export const NAV_BAR_BORDER_COLOR = '#7cc6fe';
+export const SELECTION_COLOR = '#E2EAF8';
+export const BORDER_COLOR = '#7cc6fe';

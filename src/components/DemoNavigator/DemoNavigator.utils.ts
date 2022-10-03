@@ -1,8 +1,7 @@
+import { NAV_BAR_BORDER_COLOR, NAV_BAR_SELECTION_COLOR } from 'constants';
 import {
   headerTitleConfig,
   iconsConfig,
-  NAV_BAR_BORDER_COLOR,
-  NAV_BAR_SELECTION_COLOR,
   tabBarLabelConfig,
 } from './DemoNavigator.consts';
 import { GetScreenOptions, Screens } from './DemoNavigator.types';

@@ -21,6 +21,7 @@
   "baseUrl": "./src",
   "paths": {
     "screens/*": ["screens/*"],
-    "icons/*": ["assets/icons/*"]
+    "icons/*": ["assets/icons/*"],
+    "constants/*": ["constants/*"]
   }
 }

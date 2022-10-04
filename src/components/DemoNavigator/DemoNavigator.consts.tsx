@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { CodeIcon, LayersIcon, RocketIcon, FilmIcon } from 'icons';
+import { CodeIcon, LayersIcon, RocketIcon, FilmIcon } from 'assets/icons';
 import {
   ScreenNavigatorLabels,
   Screens,

@@ -9,3 +9,6 @@ export const COLORS = [
 
 export const SELECTION_COLOR = '#E2EAF8';
 export const BORDER_COLOR = '#7cc6fe';
+export const TEXT_COLOR = '#007aff';
+export const BACKGROUND_LIGHT = '#ffffff';
+export const SWITCH_TRACK_ACTIVE = '#81b0ff';

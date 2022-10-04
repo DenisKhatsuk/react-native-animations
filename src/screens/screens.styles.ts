@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   },
   screenContainer: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   ball: {
@@ -15,6 +15,21 @@ export const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     backgroundColor: COLORS[0],
+  },
+  demoPanel: {
+    flex: 3,
+    justifyContent: 'flex-end',
+  },
+  controlsPanel: {
+    flex: 2,
+    justifyContent: 'flex-end',
+    width: 200,
+    paddingBottom: 40,
+  },
+  buttonsPanel: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: 15,
   },
   button: {
     marginTop: 20,

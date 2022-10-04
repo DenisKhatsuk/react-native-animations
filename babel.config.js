@@ -9,6 +9,7 @@ module.exports = {
           screens: './src/screens',
           icons: './src/assets/icons',
           constants: './src/constants',
+          components: './src/components',
         },
         extensions: ['.tsx', '.ts'],
       },

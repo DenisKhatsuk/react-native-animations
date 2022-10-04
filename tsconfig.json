@@ -10,17 +10,19 @@
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "baseUrl": "./src",
+    "paths": {
+      "screens/*": ["screens/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "constants/*": ["constants/*"]
+    }
   },
   "exclude": [
     "node_modules",
     "babel.config.js",
     "metro.config.js",
     "jest.config.js"
-  ],
-  "baseUrl": "./src",
-  "paths": {
-    "screens/*": ["screens/*"],
-    "icons/*": ["assets/icons/*"]
-  }
+  ]
 }

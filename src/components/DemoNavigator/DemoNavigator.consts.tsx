@@ -1,17 +1,12 @@
 import React, { ReactNode } from 'react';
 
-import { CodeIcon, LayersIcon, RocketIcon, FilmIcon } from 'icons';
+import { CodeIcon, LayersIcon, RocketIcon, FilmIcon } from 'assets/icons';
 import {
   ScreenNavigatorLabels,
   Screens,
   ScreenTitles,
 } from './DemoNavigator.types';
-
-const NAV_BAR_ICON_WIDTH = 23;
-const NAV_BAR_ICON_HEIGHT = 23;
-
-export const NAV_BAR_SELECTION_COLOR = '#E2EAF8';
-export const NAV_BAR_BORDER_COLOR = '#7cc6fe';
+import { NAV_BAR_ICON_HEIGHT, NAV_BAR_ICON_WIDTH } from 'constants';
 
 export const iconsConfig: Record<Screens, () => ReactNode> = {
   [Screens.PlainJS]: () => (

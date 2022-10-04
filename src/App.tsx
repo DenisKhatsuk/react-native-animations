@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DemoNavigator } from './components/DemoNavigator';
+import { DemoNavigator } from 'components';
 
 const App: React.FC = () => {
   return <DemoNavigator />;

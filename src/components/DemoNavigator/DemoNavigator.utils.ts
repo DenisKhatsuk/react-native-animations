@@ -1,8 +1,7 @@
+import { BORDER_COLOR, SELECTION_COLOR } from 'constants';
 import {
   headerTitleConfig,
   iconsConfig,
-  NAV_BAR_BORDER_COLOR,
-  NAV_BAR_SELECTION_COLOR,
   tabBarLabelConfig,
 } from './DemoNavigator.consts';
 import { GetScreenOptions, Screens } from './DemoNavigator.types';
@@ -17,9 +16,9 @@ export const getScreenOptions: GetScreenOptions = ({ route }) => ({
     marginHorizontal: 10,
     borderRadius: 15,
   },
-  tabBarActiveBackgroundColor: NAV_BAR_SELECTION_COLOR,
+  tabBarActiveBackgroundColor: SELECTION_COLOR,
   tabBarStyle: {
-    borderTopColor: NAV_BAR_BORDER_COLOR,
+    borderTopColor: BORDER_COLOR,
     borderTopWidth: 2,
     height: 90,
   },

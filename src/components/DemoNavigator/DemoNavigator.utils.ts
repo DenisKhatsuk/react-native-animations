@@ -5,6 +5,9 @@ import {
   tabBarLabelConfig,
 } from './DemoNavigator.consts';
 import { GetScreenOptions, Screens } from './DemoNavigator.types';
+import { Platform } from 'react-native';
+
+const isAndroid = Platform.OS === 'android';
 
 export const getScreenOptions: GetScreenOptions = ({ route }) => ({
   tabBarIcon: iconsConfig[route.name as Screens],
@@ -20,7 +23,7 @@ export const getScreenOptions: GetScreenOptions = ({ route }) => ({
   tabBarStyle: {
     borderTopColor: BORDER_COLOR,
     borderTopWidth: 2,
-    height: 90,
+    height: isAndroid ? 60 : 90,
   },
   headerTitleAlign: 'center',
 });

@@ -22,4 +22,5 @@ export const getScreenOptions: GetScreenOptions = ({ route }) => ({
     borderTopWidth: 2,
     height: 90,
   },
+  headerTitleAlign: 'center',
 });

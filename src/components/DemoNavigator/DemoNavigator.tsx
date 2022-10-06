@@ -11,12 +11,14 @@ import {
 import { Screens } from './DemoNavigator.types';
 
 import { getScreenOptions } from './DemoNavigator.utils';
+import { StatusBar } from 'react-native';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
 export const DemoNavigator: React.FC = () => {
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor="white" barStyle="dark-content" />
       <Navigator
         initialRouteName={Screens.PlainJS}
         screenOptions={getScreenOptions}>

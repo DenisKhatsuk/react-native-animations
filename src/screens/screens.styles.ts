@@ -23,7 +23,8 @@ export const styles = StyleSheet.create({
   controlsPanel: {
     flex: 2,
     justifyContent: 'flex-end',
-    width: 200,
+    width: '70%',
+    minWidth: 230,
     paddingBottom: 40,
   },
   buttonsPanel: {

@@ -22,6 +22,7 @@ export const PlainJsScreen: React.FC = () => {
   const [isPositionEnabled, setIsPositionEnabled] = useState(true);
   const [isColorEnabled, setIsColorEnabled] = useState(false);
   const [isSizeEnabled, setIsSizeEnabled] = useState(false);
+  const [isJsThreadBusy, setIsJsThreadBusy] = useState(false);
 
   const animationData = useRef({
     position: {
@@ -36,6 +37,12 @@ export const PlainJsScreen: React.FC = () => {
   });
 
   const onAnimatePress = () => {
+    if (isJsThreadBusy) {
+      let i = 0;
+      while (i < 100000000) {
+        i++;
+      }
+    }
     if (isPositionEnabled) {
       requestAnimationFrame(timestamp =>
         animateParam(timestamp, animationData.current.position, setTranslation),
@@ -104,6 +111,7 @@ export const PlainJsScreen: React.FC = () => {
               [isPositionEnabled, setIsPositionEnabled, 'Position'],
               [isColorEnabled, setIsColorEnabled, 'Color'],
               [isSizeEnabled, setIsSizeEnabled, 'Size'],
+              [isJsThreadBusy, setIsJsThreadBusy, 'Load JS Thread'],
             ]}
           />
         </View>

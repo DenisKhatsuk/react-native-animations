@@ -1,53 +1,73 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, SafeAreaView, View } from 'react-native';
+
 import { COLORS } from 'constants';
-import { styles } from './screens.styles';
 import { AnimationOptionsPanel } from 'components';
-import { onAnimatePressHandler } from './screens.types';
 
-const onAnimatePositionPress: onAnimatePressHandler<number> = setter => {
-  for (let i = -100; i < 0; i++) {
-    setTimeout(() => setter(i), 15 * -i);
-  }
-};
+import { styles } from '../screens.styles';
 
-const onAnimateColorPress: onAnimatePressHandler<string> = setter => {
-  for (let i = 0; i < COLORS.length; i++) {
-    setTimeout(() => setter(COLORS[i]), 100 * i);
-  }
-};
-
-const onAnimateSizePress: onAnimatePressHandler<number> = setter => {
-  for (let i = 0; i < 50; i++) {
-    setTimeout(() => setter(100 - i), 15 * i);
-  }
-};
+import { animateParam } from './PlainJsScreen.utils';
+import {
+  DEFAULT_ANIMATION_COLOR_DATA,
+  DEFAULT_ANIMATION_POSITION_DATA,
+  DEFAULT_ANIMATION_SIZE_DATA,
+  SIZE_MAX,
+} from './PlainJsScreen.consts';
 
 export const PlainJsScreen: React.FC = () => {
   const [translation, setTranslation] = useState(0);
   const [color, setColor] = useState(COLORS[0]);
-  const [size, setSize] = useState(100);
+  const [size, setSize] = useState(SIZE_MAX);
 
   const [isPositionEnabled, setIsPositionEnabled] = useState(true);
   const [isColorEnabled, setIsColorEnabled] = useState(false);
   const [isSizeEnabled, setIsSizeEnabled] = useState(false);
 
+  const animationData = useRef({
+    position: {
+      ...DEFAULT_ANIMATION_POSITION_DATA,
+    },
+    color: {
+      ...DEFAULT_ANIMATION_COLOR_DATA,
+    },
+    size: {
+      ...DEFAULT_ANIMATION_SIZE_DATA,
+    },
+  });
+
   const onAnimatePress = () => {
     if (isPositionEnabled) {
-      onAnimatePositionPress(setTranslation);
+      requestAnimationFrame(timestamp =>
+        animateParam(timestamp, animationData.current.position, setTranslation),
+      );
     }
     if (isColorEnabled) {
-      onAnimateColorPress(setColor);
+      requestAnimationFrame(timestamp =>
+        animateParam(timestamp, animationData.current.color, setColor),
+      );
     }
     if (isSizeEnabled) {
-      onAnimateSizePress(setSize);
+      requestAnimationFrame(timestamp =>
+        animateParam(timestamp, animationData.current.size, setSize),
+      );
     }
   };
 
   const onResetPress = () => {
     setTranslation(0);
     setColor(COLORS[0]);
-    setSize(100);
+    setSize(SIZE_MAX);
+    animationData.current = {
+      position: {
+        ...DEFAULT_ANIMATION_POSITION_DATA,
+      },
+      color: {
+        ...DEFAULT_ANIMATION_COLOR_DATA,
+      },
+      size: {
+        ...DEFAULT_ANIMATION_SIZE_DATA,
+      },
+    };
   };
 
   return (

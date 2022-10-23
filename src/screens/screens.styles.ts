@@ -1,5 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { SELECTION_COLOR, BORDER_COLOR, COLORS } from 'constants';
+import {
+  SELECTION_COLOR,
+  BORDER_COLOR,
+  COLORS,
+  BACKGROUND_LIGHT,
+} from 'constants';
 
 export const styles = StyleSheet.create({
   wrapper: {
@@ -15,17 +20,27 @@ export const styles = StyleSheet.create({
     height: 100,
     borderRadius: 50,
     backgroundColor: COLORS[0],
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  ballName: {
+    fontSize: 20,
+    color: BACKGROUND_LIGHT,
   },
   demoPanel: {
-    flex: 3,
-    justifyContent: 'flex-end',
+    flex: 1,
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'flex-end',
   },
   controlsPanel: {
-    flex: 2,
+    flex: 1,
     justifyContent: 'flex-end',
     width: '70%',
     minWidth: 230,
-    paddingBottom: 40,
+    paddingBottom: 20,
   },
   buttonsPanel: {
     flexDirection: 'row',
@@ -33,6 +48,7 @@ export const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   button: {
+    flexBasis: 90,
     marginTop: 20,
     backgroundColor: SELECTION_COLOR,
     borderRadius: 5,

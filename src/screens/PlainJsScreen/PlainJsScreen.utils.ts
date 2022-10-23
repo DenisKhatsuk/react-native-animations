@@ -1,5 +1,5 @@
-import { COLORS } from 'constants';
 import { SetStateAction } from 'react';
+import { COLORS } from 'constants';
 import {
   ANIMATION_DURATION,
   COLOR_VELOCITY,

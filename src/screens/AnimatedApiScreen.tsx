@@ -1,12 +1,5 @@
 import React, { useRef, useState } from 'react';
-import {
-  Button,
-  SafeAreaView,
-  View,
-  Animated,
-  Text,
-  // Easing,
-} from 'react-native';
+import { Button, SafeAreaView, View, Animated, Text } from 'react-native';
 
 import { AnimationOptionsPanel } from 'components';
 import { styles } from './screens.styles';

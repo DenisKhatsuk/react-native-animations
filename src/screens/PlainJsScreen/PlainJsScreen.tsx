@@ -13,6 +13,7 @@ import {
   DEFAULT_ANIMATION_SIZE_DATA,
   SIZE_MAX,
 } from './PlainJsScreen.consts';
+import { getBallStyle, loadJsThread } from 'screens/screens.utils';
 
 export const PlainJsScreen: React.FC = () => {
   const [translation, setTranslation] = useState(0);
@@ -38,10 +39,7 @@ export const PlainJsScreen: React.FC = () => {
 
   const onAnimatePress = () => {
     if (isJsThreadBusy) {
-      let i = 0;
-      while (i < 100000000) {
-        i++;
-      }
+      loadJsThread();
     }
     if (isPositionEnabled) {
       requestAnimationFrame(timestamp =>
@@ -81,21 +79,7 @@ export const PlainJsScreen: React.FC = () => {
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.screenContainer}>
         <View style={styles.demoPanel}>
-          <View
-            style={[
-              styles.ball,
-              {
-                transform: [{ translateY: translation }],
-              },
-              {
-                backgroundColor: color,
-              },
-              {
-                width: size,
-                height: size,
-              },
-            ]}
-          />
+          <View style={getBallStyle(translation, color, size)} />
         </View>
         <View style={styles.controlsPanel}>
           <View style={styles.buttonsPanel}>

@@ -14,6 +14,15 @@ import { getScreenOptions } from './DemoNavigator.utils';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
+// const AnimatedNavigator: React.FC = () => {
+//   return (
+//     <Navigator>
+//       <Screen name="Feed" component={AnimatedApiScreen} />
+//       <Screen name="Messages" component={AnimatedApiScreen} />
+//     </Navigator>
+//   );
+// };
+
 export const DemoNavigator: React.FC = () => {
   return (
     <NavigationContainer>

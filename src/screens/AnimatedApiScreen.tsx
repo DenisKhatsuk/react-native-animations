@@ -1,5 +1,12 @@
 import React, { useRef, useState } from 'react';
-import { Button, SafeAreaView, View, Animated, Text } from 'react-native';
+import {
+  Button,
+  SafeAreaView,
+  View,
+  Animated,
+  Text,
+  Easing,
+} from 'react-native';
 
 import { AnimationOptionsPanel } from 'components';
 import { styles } from './screens.styles';
@@ -45,6 +52,7 @@ export const AnimatedApiScreen: React.FC = () => {
         toValue: -200,
         duration: 1500,
         useNativeDriver: true,
+        easing: Easing.bounce,
       }).start();
     }
 

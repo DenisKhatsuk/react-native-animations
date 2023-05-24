@@ -1,0 +1,5 @@
+export enum AUTH_SCREEN_STATE {
+  INITIAL,
+  LOG_IN,
+  REGISTER,
+}

@@ -6,7 +6,7 @@ import {
   PlainJsScreen,
   AnimatedApiScreen,
   ReanimatedScreen,
-  LayoutAnimationsScreen,
+  LayoutAnimationScreen,
 } from 'screens';
 import { Screens } from './DemoNavigator.types';
 
@@ -34,7 +34,7 @@ export const DemoNavigator: React.FC = () => {
         <Screen name={Screens.Reanimated} component={ReanimatedScreen} />
         <Screen
           name={Screens.LayoutAnimations}
-          component={LayoutAnimationsScreen}
+          component={LayoutAnimationScreen}
         />
       </Navigator>
     </NavigationContainer>

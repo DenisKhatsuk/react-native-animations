@@ -3,31 +3,41 @@ import React, { useState } from 'react';
 import {
   Button,
   LayoutAnimation,
-  Platform,
   SafeAreaView,
   TextInput,
-  UIManager,
   View,
 } from 'react-native';
 import { styles as screenStyles } from '../screens.styles';
 import { AUTH_SCREEN_STATE } from './LayoutAnimationScreen.consts';
 import { styles } from './LayoutAnimationScreen.styles';
 
-if (Platform.OS === 'android') {
-  if (UIManager.setLayoutAnimationEnabledExperimental) {
-    UIManager.setLayoutAnimationEnabledExperimental(true);
-  }
-}
+const customLayoutAnimation = {
+  duration: 400,
+  create: {
+    duration: 700,
+    type: LayoutAnimation.Types.linear,
+    property: LayoutAnimation.Properties.opacity,
+  },
+  update: {
+    type: LayoutAnimation.Types.linear,
+    property: LayoutAnimation.Properties.opacity,
+  },
+  delete: {
+    duration: 100,
+    type: LayoutAnimation.Types.linear,
+    property: LayoutAnimation.Properties.opacity,
+  },
+};
 
 export const LayoutAnimationScreen: React.FC = () => {
   const [screenState, setScreenState] = useState(AUTH_SCREEN_STATE.INITIAL);
 
   const isInitial = screenState === AUTH_SCREEN_STATE.INITIAL;
-  // const isLogin = screenState === AUTH_SCREEN_STATE.LOG_IN;
   const isRegister = screenState === AUTH_SCREEN_STATE.REGISTER;
 
   const onStateSwitch = (newState: AUTH_SCREEN_STATE) => {
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
+    // LayoutAnimation.configureNext(LayoutAnimation.Presets.linear);
+    LayoutAnimation.configureNext(customLayoutAnimation);
     setScreenState(newState);
   };
 
